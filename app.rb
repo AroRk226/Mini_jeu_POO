@@ -9,10 +9,11 @@ player2 = Player.new("José")
 
 while player1.life_points > 0 && player2.life_points > 0 
 
-puts "-----------------Voici l'état de chaque joueur-----------------"
+puts ""
+puts "			Voici l'état de chaque joueur 			"
 puts "#{player1.show_state}"
 puts "#{player2.show_state}"
-puts "-----------------Passons à la phase d'attaque------------------"
+puts "			Passons à la phase d'attaque 			"
 puts player1.attacks(player2)
 puts player2.show_state
 	if player2.life_points <= 0

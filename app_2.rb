@@ -4,33 +4,36 @@ Bundler.require
 require_relative 'lib/game'
 require_relative 'lib/player'
 
-puts "	  ------------------------------------------------"
-puts "	  |BIENVENUE SUR 'ILS VEULENT TOUS MA POO' !!!!! |"
-puts "	  |Le but du jeu est d'être le dernier survivant |"
-puts "	  ------------------------------------------------"
+puts "	  ************************************************************************"
+puts "	  ** --------  BIENVENUE SUR 'ILS VEULENT TOUS MA POO' !!!!!  ----------**"
+puts "	  ** --------  Le but du jeu est d'être le dernier survivant  ----------**"
+puts "	  ************************************************************************"
 
 #------------------------------------------------------
 puts "Saisir un nom de joueur"
-player3 = HumanPlayer.new(gets.chomp.to_s)
+user = HumanPlayer.new(gets.chomp.to_s)
 
 #-----------------------------------------------------
 player1 = Player.new("Josiane")
 player2 = Player.new("José")
 ennemies = [player1, player2]
-joueur = player3
+joueur = user
 
-while player3.life_points > 0 && player1.life_points > 0 || player2.life_points > 0
+while user.life_points > 0 && player1.life_points > 0 || player2.life_points > 0
 
 	if 
-		player3.life_points <= 0
-		puts "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯LOSER VOUS AVEZ PERDU !!!¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯"
+		user.life_points <= 0
+
+		puts "*****************************************************************"
+		puts "** ---------------   LOSER VOUS AVEZ PERDU !!!   ------------- **"
+		puts "*****************************************************************"
 		break
 	end
 
-	puts "¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨Voici l'état de santé de ton joueur¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨"
+	puts "------------Voici l'état de santé de ton joueur-------"
 	puts "\n"
-	puts player3.show_state
-	puts "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯Quelle action veux-tu effectuer ?¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯"
+	puts user.show_state
+	puts "----------Quelle action veux-tu effectuer ? ----------"
 	puts "\n"
 	puts "a - Chercher une meilleure arme"
 	puts "s - chercher à se soigner"
@@ -50,7 +53,10 @@ while player3.life_points > 0 && player1.life_points > 0 || player2.life_points 
 
 		if 	player1.life_points <= 0 &&	player2.life_points <= 0 
 			puts "Vous avez mis un joueur KO"
-			puts "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯VOUS AVEZ GAGNÉ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯"
+			puts ""
+			puts "******************************************************************"
+			puts "** ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯   VOUS AVEZ GAGNÉ   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ **"
+			puts "******************************************************************"
 			break
 		end
 
